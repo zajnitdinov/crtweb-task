@@ -1,0 +1,48 @@
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&display=swap');
+
+body {
+  font-family: 'Montserrat', sans-serif;
+  display: flex;
+}
+
+.card-list {
+  display: flex;
+}
+
+.card {
+  position: relative;
+  width: 300px;
+  min-height: 300px;
+  border: 1px solid #eee;
+  &__img {
+    width: 300px;
+    height: 300px;
+    background-image: url('https://place-hold.it/300x300.jpg');
+  }
+  &__type, &__address {
+    text-transform: uppercase;
+    font-size: 10px;
+    font-weight: 700;
+    color: #6e6d6d;
+    padding: 10px;
+
+  }
+  &__type {
+    float: right;
+  }
+  &__title {
+    display: block;
+    font-size: 24px;
+    padding: 10px;
+  }
+  &__owner {
+    font-size: 12px;
+    padding: 10px;
+  }
+  &__like {
+    width: 20px;
+    position: absolute;
+    top: 10px;
+    right: 10px;
+  }
+}
