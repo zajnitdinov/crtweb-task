@@ -1,12 +1,11 @@
 import React, {useEffect, useState} from 'react';
-import Card from "./index";
+import Card from "../card";
 
 const App = () => {
     const [data, fetchData] = useState([]);
     const getData = async () => {
         const req = await fetch('entities.json');
         const res = await req.json();
-        const data = res.response;
         fetchData(res.response);
     }
     useEffect(() => {

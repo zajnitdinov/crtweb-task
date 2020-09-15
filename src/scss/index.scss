@@ -2,14 +2,17 @@
 
 body {
   font-family: 'Montserrat', sans-serif;
-  display: flex;
 }
 
 .card-list {
   display: flex;
+  justify-content: center;
+  grid-template-rows: 1fr 1fr 1fr;
+  grid-template-columns: 1fr 1fr 1fr
 }
 
 .card {
+  margin-left: 50px;
   position: relative;
   width: 300px;
   min-height: 300px;

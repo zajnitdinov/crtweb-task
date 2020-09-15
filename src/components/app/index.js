@@ -1,2 +1,2 @@
-import App from "../card/app";
+import App from "./app";
 export default App;

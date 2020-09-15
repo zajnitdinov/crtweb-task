@@ -6,11 +6,18 @@ const Card = (props) => {
     const [like, setLike] = useState(false);
     const LikeComponent = () => like ? <Like/> : <Unlike/>;
     const handleClick = () => setLike(like ? false : true);
+    const {type,
+        attributes: {area, unit, title,
+            address: {city, street, house, room}},
+        relationships: {type: typeRelationspips,
+            attributes: {first_name, last_name, middle_name}}} = props;
     const data = {
-        type: props.type === 'flat' ? 'Квартира' : '',
-
+        type: `${type === 'flat' ? 'Квартира, ' : ''} ${area} ${unit}`,
+        address: `${city}, ${street} ${house}, ${room}`,
+        title,
+        owner: `${typeRelationspips === 'agent' ? 'Агент' : ''} ${last_name} ${first_name} ${middle_name}`
     }
-    console.log(data);
+    console.log(props);
     return (
         <div className="card">
             <div className="card__like"
@@ -18,10 +25,10 @@ const Card = (props) => {
                 <LikeComponent/>
             </div>
             <div className="card__img"></div>
-            <div className="card__type">Квартира, 134 квм</div>
-            <div className="card__address">Тюмень, Минская 3а, 123</div>
-            <div className="card__title">3-х комнатная на Минской</div>
-            <div className="card__owner">Агент Дроздов Василий Михайлович</div>
+            <div className="card__type">{data.type}</div>
+            <div className="card__address">{data.address}</div>
+            <div className="card__title">{data.title}</div>
+            <div className="card__owner">{data.owner}</div>
         </div>
     );
 };
